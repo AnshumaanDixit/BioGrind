@@ -1,0 +1,1823 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BioGrind - Grind Smart, Score Better</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <div class="logo-icon">
+                🧬
+            </div>
+
+            <div class="logo-text">
+
+                <h2>BioGrind</h2>
+
+                <p>Grind Smart, Score Better</p>
+
+            </div>
+
+        </div>
+
+
+        <nav>
+
+            <button class="nav-btn active"
+                onclick="showSection('dashboard', this)">
+                🏠
+                <span>Dashboard</span>
+            </button>
+
+
+            <button class="nav-btn"
+                onclick="showSection('learn', this)">
+                📚
+                <span>Learn</span>
+            </button>
+
+
+            <button class="nav-btn"
+                onclick="showSection('quiz', this)">
+                🧠
+                <span>Practice Quiz</span>
+            </button>
+
+
+            <button class="nav-btn"
+                onclick="showSection('myQuestions', this)">
+                ✍️
+                <span>My Questions</span>
+            </button>
+
+
+            <button class="nav-btn"
+                onclick="showSection('progress', this)">
+                📊
+                <span>Progress</span>
+            </button>
+
+
+            <button class="nav-btn"
+                onclick="showSection('upload', this)">
+                📤
+                <span>Upload Material</span>
+            </button>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <button class="theme-btn"
+                onclick="toggleTheme()">
+
+                🌙
+                <span>Dark / Light</span>
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="main">
+
+
+        <!-- ================= TOPBAR ================= -->
+
+        <header class="topbar">
+
+            <div>
+
+                <h1 id="pageTitle">
+                    Dashboard
+                </h1>
+
+                <p id="pageSubtitle">
+                    Your daily biology preparation starts here.
+                </p>
+
+            </div>
+
+
+            <!-- PROFILE -->
+
+            <div class="profile-wrapper">
+
+                <button class="profile"
+                    onclick="toggleProfileMenu()">
+
+                    <div class="profile-avatar">
+                        👩‍🎓
+                    </div>
+
+                    <div class="profile-info">
+
+                        <strong id="profileName">
+                            Student
+                        </strong>
+
+                        <span>
+                            Class 10
+                        </span>
+
+                    </div>
+
+                    <span class="profile-arrow">
+                        ▼
+                    </span>
+
+                </button>
+
+
+                <!-- PROFILE DROPDOWN -->
+
+                <div id="profileMenu"
+                    class="dropdown-menu profile-menu">
+
+                    <div class="dropdown-user">
+
+                        <div class="large-avatar">
+                            👩‍🎓
+                        </div>
+
+                        <div>
+
+                            <strong id="dropdownUserName">
+                                Student
+                            </strong>
+
+                            <p>
+                                Class 10 Biology
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="dropdown-divider"></div>
+
+
+                    <button onclick="openModal('editProfileModal')">
+
+                        👤
+                        <span>Edit Profile</span>
+
+                    </button>
+
+
+                    <button onclick="openModal('settingsModal')">
+
+                        ⚙️
+                        <span>Settings</span>
+
+                    </button>
+
+
+                    <button onclick="openModal('statsModal')">
+
+                        📊
+                        <span>My Stats</span>
+
+                    </button>
+
+
+                    <button onclick="openModal('screenTimeModal')">
+
+                        ⏱️
+                        <span>Screen Time</span>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ================= DASHBOARD ================= -->
+
+        <section id="dashboard"
+            class="section active">
+
+            <div class="hero">
+
+                <div>
+
+                    <span class="hero-tag">
+                        CLASS 10 BIOLOGY
+                    </span>
+
+                    <h2>
+                        Grind Smart.<br>
+                        <span>Score Better. 🚀</span>
+                    </h2>
+
+                    <p>
+                        Learn smarter, practice better and identify
+                        your weak areas before the board exam.
+                    </p>
+
+                    <button class="primary-btn"
+                        onclick="showSection('learn')">
+
+                        Start Learning →
+
+                    </button>
+
+                </div>
+
+
+                <div class="hero-icon">
+                    🧬
+                </div>
+
+            </div>
+
+
+            <!-- STATS -->
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+
+                    <span>🔥</span>
+
+                    <h3>
+                        7 Days
+                    </h3>
+
+                    <p>
+                        Current Streak
+                    </p>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <span>📝</span>
+
+                    <h3>
+                        42
+                    </h3>
+
+                    <p>
+                        Questions Solved
+                    </p>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <span>🎯</span>
+
+                    <h3>
+                        78%
+                    </h3>
+
+                    <p>
+                        Average Score
+                    </p>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <span>⏱️</span>
+
+                    <h3>
+                        12h
+                    </h3>
+
+                    <p>
+                        Study Time
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="dashboard-grid">
+
+
+                <!-- DAILY TASKS -->
+
+                <div class="card">
+
+                    <div class="card-header">
+
+                        <div>
+
+                            <h3>
+                                Today's Tasks
+                            </h3>
+
+                            <p>
+                                Complete your daily goals
+                            </p>
+
+                        </div>
+
+                        <span id="taskCount"
+                            class="task-count">
+                            0 / 3
+                        </span>
+
+                    </div>
+
+
+                    <div class="task">
+
+                        <input type="checkbox"
+                            onchange="completeTask(this)">
+
+                        <div>
+
+                            <strong>
+                                Revise Genetics
+                            </strong>
+
+                            <p>
+                                15 minutes
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="task">
+
+                        <input type="checkbox"
+                            onchange="completeTask(this)">
+
+                        <div>
+
+                            <strong>
+                                Practice 10 Questions
+                            </strong>
+
+                            <p>
+                                10 questions
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="task">
+
+                        <input type="checkbox"
+                            onchange="completeTask(this)">
+
+                        <div>
+
+                            <strong>
+                                Read Photosynthesis
+                            </strong>
+
+                            <p>
+                                20 minutes
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- AREAS TO IMPROVE -->
+
+                <div class="card">
+
+                    <div class="card-header">
+
+                        <div>
+
+                            <h3>
+                                Areas to Improve
+                            </h3>
+
+                            <p>
+                                Focus on these topics
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="weak-topic">
+
+                        <div>
+
+                            <span>
+                                Genetics
+                            </span>
+
+                            <strong>
+                                35%
+                            </strong>
+
+                        </div>
+
+                        <div class="progress">
+
+                            <div style="width:35%"></div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="weak-topic">
+
+                        <div>
+
+                            <span>
+                                Human Evolution
+                            </span>
+
+                            <strong>
+                                48%
+                            </strong>
+
+                        </div>
+
+                        <div class="progress">
+
+                            <div style="width:48%"></div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="weak-topic">
+
+                        <div>
+
+                            <span>
+                                Endocrine System
+                            </span>
+
+                            <strong>
+                                58%
+                            </strong>
+
+                        </div>
+
+                        <div class="progress">
+
+                            <div style="width:58%"></div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= LEARN ================= -->
+
+        <section id="learn"
+            class="section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <h2>
+                        Biology Chapters
+                    </h2>
+
+                    <p>
+                        Master all 15 chapters step by step.
+                    </p>
+
+                </div>
+
+                <span class="chapter-total">
+                    15 Chapters
+                </span>
+
+            </div>
+
+
+            <div class="chapter-grid">
+
+
+                <div class="chapter-card" data-image="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=1200&q=80" data-pdf="Structure of Chromosome.pdf">
+
+                    <span class="chapter-number">
+                        01
+                    </span>
+
+                    <h3>
+                        Structure of Chromosomes, Cell Cycle and Cell Division
+                    </h3>
+
+                    <p>
+                        Chromosomes • Cell Cycle • Mitosis • Meiosis
+                    </p>
+
+                    <button onclick="openPdfViewer('Structure of Chromosome.pdf', 'Structure of Chromosomes, Cell Cycle and Cell Division')">
+                        📄 View PDF →
+                    </button>
+
+                </div>
+
+
+                <div class="chapter-card" data-image="https://images.unsplash.com/photo-1530026405186-ed1f139313f8?auto=format&fit=crop&w=1200&q=80" data-pdf="Genetics.pdf">
+
+                    <span class="chapter-number">
+                        02
+                    </span>
+
+                    <h3>
+                        Genetics
+                    </h3>
+
+                    <p>
+                        Genes • Heredity • Traits • Inheritance
+                    </p>
+
+                    <button onclick="openPdfViewer('Genetics.pdf', 'Genetics')">
+                        📄 View PDF →
+                    </button>
+
+                </div>
+
+
+                <div class="chapter-card" data-image="https://images.unsplash.com/photo-1497250681960-ef046c08a56e?auto=format&fit=crop&w=1200&q=80" data-pdf="Absorption by Roots.pdf">
+
+                    <span class="chapter-number">
+                        03
+                    </span>
+
+                    <h3>
+                        Absorption by Roots
+                    </h3>
+
+                    <p>
+                        Roots • Osmosis • Water Absorption
+                    </p>
+
+                    <button onclick="openPdfViewer('Absorption by Roots.pdf', 'Absorption by Roots')">
+                        📄 View PDF →
+                    </button>
+
+                </div>
+
+
+                <div class="chapter-card" data-image="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1200&q=80" data-pdf="Transpiration.pdf">
+
+                    <span class="chapter-number">
+                        04
+                    </span>
+
+                    <h3>
+                        Transpiration
+                    </h3>
+
+                    <p>
+                        Water Loss • Stomata • Factors
+                    </p>
+
+                    <button onclick="openPdfViewer('Transpiration.pdf', 'Transpiration')">
+                        📄 View PDF →
+                    </button>
+
+                </div>
+
+
+                <div class="chapter-card" data-image="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=1200&q=80" data-pdf="Photosynthesis.pdf">
+
+                    <span class="chapter-number">
+                        05
+                    </span>
+
+                    <h3>
+                        Photosynthesis
+                    </h3>
+
+                    <p>
+                        Chlorophyll • Light • Food Production
+                    </p>
+
+                    <button onclick="openPdfViewer('Photosynthesis.pdf', 'Photosynthesis')">
+                        📄 View PDF →
+                    </button>
+
+                </div>
+
+
+                <div class="chapter-card" data-image="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?auto=format&fit=crop&w=1200&q=80" data-pdf="Chemical Coordination in.pdf">
+
+                    <span class="chapter-number">
+                        06
+                    </span>
+
+                    <h3>
+                        Chemical Coordination in Plants
+                    </h3>
+
+                    <p>
+                        Plant Hormones • Growth • Responses
+                    </p>
+
+                    <button onclick="openPdfViewer('Chemical Coordination in.pdf', 'Chemical Coordination in Plants')">
+                        📄 View PDF →
+                    </button>
+
+                </div>
+
+
+                <div class="chapter-card" data-image="https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=1200&q=80" data-pdf="The Circulatory System.pdf">
+
+                    <span class="chapter-number">
+                        07
+                    </span>
+
+                    <h3>
+                        The Circulatory System
+                    </h3>
+
+                    <p>
+                        Heart • Blood • Blood Vessels
+                    </p>
+
+                    <button onclick="openPdfViewer('The Circulatory System.pdf', 'The Circulatory System')">
+                        📄 View PDF →
+                    </button>
+
+                </div>
+
+
+                <div class="chapter-card" data-image="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=1200&q=80" data-pdf="The Excretory System.pdf">
+
+                    <span class="chapter-number">
+                        08
+                    </span>
+
+                    <h3>
+                        The Excretory System
+                    </h3>
+
+                    <p>
+                        Kidneys • Nephrons • Urine Formation
+                    </p>
+
+                    <button onclick="openPdfViewer('The Excretory System.pdf', 'The Excretory System')">
+                        📄 View PDF →
+                    </button>
+
+                </div>
+
+
+                <div class="chapter-card" data-image="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=1200&q=80" data-pdf="The Nervous System.pdf">
+
+                    <span class="chapter-number">
+                        09
+                    </span>
+
+                    <h3>
+                        The Nervous System
+                    </h3>
+
+                    <p>
+                        Brain • Neurons • Reflex Action
+                    </p>
+
+                    <button onclick="openPdfViewer('The Nervous System.pdf', 'The Nervous System')">
+                        📄 View PDF →
+                    </button>
+
+                </div>
+
+
+                <div class="chapter-card" data-image="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=1200&q=80" data-pdf="Sense Organs.pdf">
+
+                    <span class="chapter-number">
+                        10
+                    </span>
+
+                    <h3>
+                        Sense Organs
+                    </h3>
+
+                    <p>
+                        Eye • Ear • Sensory Receptors
+                    </p>
+
+                    <button onclick="openPdfViewer('Sense Organs.pdf', 'Sense Organs')">
+                        📄 View PDF →
+                    </button>
+
+                </div>
+
+
+                <div class="chapter-card" data-image="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=80" data-pdf="The Endocrine System.pdf">
+
+                    <span class="chapter-number">
+                        11
+                    </span>
+
+                    <h3>
+                        The Endocrine System
+                    </h3>
+
+                    <p>
+                        Hormones • Glands • Regulation
+                    </p>
+
+                    <button onclick="openPdfViewer('The Endocrine System.pdf', 'The Endocrine System')">
+                        📄 View PDF →
+                    </button>
+
+                </div>
+
+
+                <div class="chapter-card" data-image="https://images.unsplash.com/photo-1578496479531-32e07e75e0b6?auto=format&fit=crop&w=1200&q=80" data-pdf="The Reproductive System.pdf">
+
+                    <span class="chapter-number">
+                        12
+                    </span>
+
+                    <h3>
+                        The Reproductive System
+                    </h3>
+
+                    <p>
+                        Reproduction • Gametes • Fertilisation
+                    </p>
+
+                    <button onclick="openPdfViewer('The Reproductive System.pdf', 'The Reproductive System')">
+                        📄 View PDF →
+                    </button>
+
+                </div>
+
+
+                <div class="chapter-card" data-image="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=1200&q=80" data-pdf="Human Evolution.pdf">
+
+                    <span class="chapter-number">
+                        13
+                    </span>
+
+                    <h3>
+                        Human Evolution
+                    </h3>
+
+                    <p>
+                        Evolution • Ancestors • Adaptation
+                    </p>
+
+                    <button onclick="openPdfViewer('Human Evolution.pdf', 'Human Evolution')">
+                        📄 View PDF →
+                    </button>
+
+                </div>
+
+
+                <div class="chapter-card" data-image="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1200&q=80" data-pdf="Population.pdf">
+
+                    <span class="chapter-number">
+                        14
+                    </span>
+
+                    <h3>
+                        Population
+                    </h3>
+
+                    <p>
+                        Population Growth • Resources • Control
+                    </p>
+
+                    <button onclick="openPdfViewer('Population.pdf', 'Population')">
+                        📄 View PDF →
+                    </button>
+
+                </div>
+
+
+                <div class="chapter-card" data-image="https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=1200&q=80" data-pdf="Pollution.pdf">
+
+                    <span class="chapter-number">
+                        15
+                    </span>
+
+                    <h3>
+                        Pollution
+                    </h3>
+
+                    <p>
+                        Air • Water • Soil • Environment
+                    </p>
+
+                    <button onclick="openPdfViewer('Pollution.pdf', 'Pollution')">
+                        📄 View PDF →
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= QUIZ ================= -->
+
+        <section id="quiz"
+            class="section">
+
+            <div class="quiz-container">
+
+                <div class="quiz-top">
+
+                    <div>
+
+                        <span class="quiz-label">
+                            PRACTICE MODE
+                        </span>
+
+                        <h2>
+                            Test Your Biology
+                        </h2>
+
+                    </div>
+
+                    <span id="questionNumber">
+                        Question 1 / 5
+                    </span>
+
+                </div>
+
+
+                <div class="quiz-progress">
+
+                    <div id="quizProgress"></div>
+
+                </div>
+
+
+                <div class="question-card">
+
+                    <h2 id="questionText">
+                        Loading question...
+                    </h2>
+
+                    <div id="options"></div>
+
+                    <div id="feedback"></div>
+
+                </div>
+
+
+                <div id="quizEnd"
+                    style="display:none;">
+
+                    <h2>
+                        Quiz Completed! 🎉
+                    </h2>
+
+                    <div class="quiz-result">
+
+                        <strong id="finalScore">
+                            Score: 80%
+                        </strong>
+
+                    </div>
+
+                    <button class="primary-btn"
+                        onclick="restartQuiz()">
+                        Try Again
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= MY QUESTIONS ================= -->
+
+        <section id="myQuestions"
+            class="section">
+
+            <div class="question-analysis-grid">
+
+
+                <div class="card">
+
+                    <div class="card-header">
+
+                        <div>
+
+                            <h3>
+                                Analyse Your Question
+                            </h3>
+
+                            <p>
+                                Check how important your question is
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <label>
+                        Your Question
+                    </label>
+
+                    <textarea id="questionInput"
+                        placeholder="Paste your question here..."></textarea>
+
+
+                    <label>
+                        Chapter
+                    </label>
+
+                    <select id="chapterSelect">
+
+                        <option>
+                            Select a chapter...
+                        </option>
+
+                        <option>
+                            Genetics
+                        </option>
+
+                        <option>
+                            Photosynthesis
+                        </option>
+
+                        <option>
+                            The Circulatory System
+                        </option>
+
+                        <option>
+                            The Excretory System
+                        </option>
+
+                        <option>
+                            The Nervous System
+                        </option>
+
+                        <option>
+                            Sense Organs
+                        </option>
+
+                        <option>
+                            The Endocrine System
+                        </option>
+
+                        <option>
+                            The Reproductive System
+                        </option>
+
+                        <option>
+                            Human Evolution
+                        </option>
+
+                        <option>
+                            Population
+                        </option>
+
+                        <option>
+                            Pollution
+                        </option>
+
+                        <option>
+                            Transpiration
+                        </option>
+
+                        <option>
+                            Absorption by Roots
+                        </option>
+
+                        <option>
+                            Chemical Coordination in Plants
+                        </option>
+
+                        <option>
+                            Structure of Chromosomes, Cell Cycle and Cell Division
+                        </option>
+
+                    </select>
+
+
+                    <button class="primary-btn"
+                        onclick="analyzeQuestion()"
+                        style="margin-top: 20px;">
+
+                        Analyse Now
+
+                    </button>
+
+                </div>
+
+
+                <div class="card">
+
+                    <div class="card-header">
+
+                        <div>
+
+                            <h3>
+                                Analysis Result
+                            </h3>
+
+                            <p>
+                                <span id="savedQuestionCount">
+                                    0 Questions
+                                </span>
+                                analysed
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div id="analysisEmpty">
+
+                        <p class="empty-text">
+                            Analyse a question to see results
+                        </p>
+
+                    </div>
+
+
+                    <div id="analysisResult"
+                        style="display: none;">
+
+                        <div class="analysis-info">
+
+                            <div>
+
+                                <span>
+                                    Relevance Score
+                                </span>
+
+                                <strong id="relevanceScore">
+                                    0%
+                                </strong>
+
+                                <div class="progress"
+                                    style="margin-top: 8px;">
+
+                                    <div id="analysisMeter"
+                                        style="width: 0%;"></div>
+
+                                </div>
+
+                            </div>
+
+                            <div>
+
+                                <span>
+                                    Badge
+                                </span>
+
+                                <strong id="relevanceBadge">
+                                    LOW PRIORITY
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="analysis-details">
+
+                            <div class="analysis-row">
+
+                                <span>
+                                    Chapter
+                                </span>
+
+                                <strong id="resultChapter">
+                                    -
+                                </strong>
+
+                            </div>
+
+                            <div class="analysis-row">
+
+                                <span>
+                                    Importance
+                                </span>
+
+                                <strong id="importance">
+                                    -
+                                </strong>
+
+                            </div>
+
+                            <div class="analysis-row">
+
+                                <span>
+                                    PYQ Pattern Match
+                                </span>
+
+                                <strong id="pyqPattern">
+                                    -
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+                        <p id="analysisMessage"
+                            class="analysis-message"></p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="card"
+                style="margin-top: 25px;">
+
+                <div class="card-header">
+
+                    <h3>
+                        Your Saved Questions
+                    </h3>
+
+                </div>
+
+                <div id="savedQuestionsList"></div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= PROGRESS ================= -->
+
+        <section id="progress"
+            class="section">
+
+            <div class="progress-overview">
+
+                <div class="card">
+
+                    <h3>
+                        Overall Progress
+                    </h3>
+
+                    <strong style="font-size: 48px; color: var(--green); margin: 15px 0; display: block;">
+                        78%
+                    </strong>
+
+                    <p>
+                        You're on track! Keep practicing.
+                    </p>
+
+                    <div class="progress"
+                        style="margin-top: 15px;">
+
+                        <div style="width: 78%;"></div>
+
+                    </div>
+
+                </div>
+
+                <div class="card">
+
+                    <h3>
+                        Time Spent
+                    </h3>
+
+                    <strong style="font-size: 48px; color: var(--blue); margin: 15px 0; display: block;">
+                        12h 45m
+                    </strong>
+
+                    <p>
+                        Great dedication to your studies!
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= UPLOAD ================= -->
+
+        <section id="upload"
+            class="section">
+
+            <div class="upload-container">
+
+                <div class="card">
+
+                    <h3>
+                        Upload Your Study Material
+                    </h3>
+
+                    <p style="color: var(--muted); margin-bottom: 20px;">
+                        Add PDFs, notes, or study materials to your learning space.
+                    </p>
+
+
+                    <div class="upload-area"
+                        ondrop="handleDrop(event)"
+                        ondragover="event.preventDefault()"
+                        ondragenter="this.style.borderColor='var(--green)';"
+                        ondragleave="this.style.borderColor='var(--border)';">
+
+                        <span style="font-size: 40px; margin-bottom: 10px; display: block;">
+                            📁
+                        </span>
+
+                        <strong>
+                            Drag and drop your PDF here
+                        </strong>
+
+                        <p style="color: var(--muted); font-size: 13px; margin: 10px 0;">
+                            or
+                        </p>
+
+                        <input type="file"
+                            id="pdfFile"
+                            accept=".pdf"
+                            onchange="showFileName()"
+                            style="display: none;">
+
+                        <button class="primary-btn"
+                            onclick="document.getElementById('pdfFile').click();">
+
+                            Choose File
+
+                        </button>
+
+                        <p id="fileName"
+                            style="margin-top: 15px; color: var(--muted); font-size: 13px;">
+                            No file selected
+                        </p>
+
+                    </div>
+
+
+                    <button class="primary-btn"
+                        onclick="uploadFile()"
+                        style="width: 100%; margin-top: 20px;">
+
+                        Upload PDF
+
+                    </button>
+
+                    <p style="color: var(--muted); font-size: 11px; margin-top: 15px; text-align: center;">
+                        Supported formats: PDF | Max size: 50MB
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= MODALS ================= -->
+
+    <!-- EDIT PROFILE -->
+
+    <div id="editProfileModal"
+        class="modal-overlay"
+        onclick="closeModalOutside(event, 'editProfileModal')">
+
+        <div class="modal">
+
+            <button class="close-btn"
+                onclick="closeModal('editProfileModal')">
+                ×
+            </button>
+
+            <div class="modal-icon">
+                👤
+            </div>
+
+            <h2>
+                Edit Profile
+            </h2>
+
+            <p class="modal-subtitle">
+                Update your profile details.
+            </p>
+
+
+            <label>
+                Name
+            </label>
+
+            <input type="text"
+                id="editName"
+                placeholder="Your name">
+
+
+            <button class="primary-btn modal-btn"
+                onclick="saveProfile()">
+
+                Save Changes
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- SETTINGS -->
+
+    <div id="settingsModal"
+        class="modal-overlay"
+        onclick="closeModalOutside(event, 'settingsModal')">
+
+        <div class="modal">
+
+            <button class="close-btn"
+                onclick="closeModal('settingsModal')">
+                ×
+            </button>
+
+            <div class="modal-icon">
+                ⚙️
+            </div>
+
+            <h2>
+                Settings
+            </h2>
+
+            <p class="modal-subtitle">
+                Manage your BioGrind preferences.
+            </p>
+
+
+            <div class="settings-list">
+
+
+                <button onclick="openSetting('account')">
+
+                    <span class="setting-icon">
+                        👤
+                    </span>
+
+                    <span class="setting-text">
+
+                        <strong>
+                            Account
+                        </strong>
+
+                        <small>
+                            Manage your profile
+                        </small>
+
+                    </span>
+
+                    <span>
+                        →
+                    </span>
+
+                </button>
+
+
+                <button onclick="openSetting('notifications')">
+
+                    <span class="setting-icon">
+                        🔔
+                    </span>
+
+                    <span class="setting-text">
+
+                        <strong>
+                            Notifications
+                        </strong>
+
+                        <small>
+                            Manage reminders and alerts
+                        </small>
+
+                    </span>
+
+                    <span>
+                        →
+                    </span>
+
+                </button>
+
+
+                <button onclick="openSetting('mode')">
+
+                    <span class="setting-icon">
+                        🌙
+                    </span>
+
+                    <span class="setting-text">
+
+                        <strong>
+                            Mode
+                        </strong>
+
+                        <small>
+                            Light or dark appearance
+                        </small>
+
+                    </span>
+
+                    <span>
+                        →
+                    </span>
+
+                </button>
+
+
+                <button onclick="openSetting('help')">
+
+                    <span class="setting-icon">
+                        ❓
+                    </span>
+
+                    <span class="setting-text">
+
+                        <strong>
+                            Help
+                        </strong>
+
+                        <small>
+                            Get help with BioGrind
+                        </small>
+
+                    </span>
+
+                    <span>
+                        →
+                    </span>
+
+                </button>
+
+
+                <button class="logout-setting"
+                    onclick="logoutUser()">
+
+                    <span class="setting-icon">
+                        🚪
+                    </span>
+
+                    <span class="setting-text">
+
+                        <strong>
+                            Log Out
+                        </strong>
+
+                        <small>
+                            Exit your account
+                        </small>
+
+                    </span>
+
+                    <span>
+                        →
+                    </span>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- MY STATS -->
+
+    <div id="statsModal"
+        class="modal-overlay"
+        onclick="closeModalOutside(event, 'statsModal')">
+
+        <div class="modal stats-modal">
+
+            <button class="close-btn"
+                onclick="closeModal('statsModal')">
+                ×
+            </button>
+
+            <div class="modal-icon">
+                📊
+            </div>
+
+            <h2>
+                My Stats
+            </h2>
+
+            <p class="modal-subtitle">
+                Your BioGrind performance at a glance.
+            </p>
+
+
+            <div class="modal-stats-grid">
+
+                <div>
+                    <strong>
+                        78%
+                    </strong>
+
+                    <span>
+                        Avg. Score
+                    </span>
+                </div>
+
+
+                <div>
+                    <strong>
+                        42
+                    </strong>
+
+                    <span>
+                        Questions
+                    </span>
+                </div>
+
+
+                <div>
+                    <strong>
+                        7 🔥
+                    </strong>
+
+                    <span>
+                        Day Streak
+                    </span>
+                </div>
+
+
+                <div>
+                    <strong>
+                        12h
+                    </strong>
+
+                    <span>
+                        Study Time
+                    </span>
+                </div>
+
+            </div>
+
+
+            <div class="stat-highlight">
+
+                <span>
+                    Current Goal
+                </span>
+
+                <strong>
+                    Score 90%+ in Biology
+                </strong>
+
+                <div class="progress">
+
+                    <div style="width:78%"></div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- SCREEN TIME -->
+
+    <div id="screenTimeModal"
+        class="modal-overlay"
+        onclick="closeModalOutside(event, 'screenTimeModal')">
+
+        <div class="modal">
+
+            <button class="close-btn"
+                onclick="closeModal('screenTimeModal')">
+                ×
+            </button>
+
+            <div class="modal-icon">
+                ⏱️
+            </div>
+
+            <h2>
+                Screen Time
+            </h2>
+
+            <p class="modal-subtitle">
+                See how much time you're spending on BioGrind.
+            </p>
+
+
+            <div class="screen-time-main">
+
+                <strong>
+                    1h 42m
+                </strong>
+
+                <span>
+                    Today's study time
+                </span>
+
+            </div>
+
+
+            <div class="screen-time-row">
+
+                <span>
+                    Monday
+                </span>
+
+                <strong>
+                    1h 20m
+                </strong>
+
+            </div>
+
+
+            <div class="screen-time-row">
+
+                <span>
+                    Tuesday
+                </span>
+
+                <strong>
+                    1h 45m
+                </strong>
+
+            </div>
+
+
+            <div class="screen-time-row">
+
+                <span>
+                    Wednesday
+                </span>
+
+                <strong>
+                    2h 10m
+                </strong>
+
+            </div>
+
+
+            <div class="screen-time-row">
+
+                <span>
+                    Thursday
+                </span>
+
+                <strong>
+                    1h 42m
+                </strong>
+
+            </div>
+
+
+            <p class="screen-time-note">
+                💡 Later, this can be connected to real
+                session tracking through the backend.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- SETTINGS DETAIL -->
+
+    <div id="settingDetailModal"
+        class="modal-overlay"
+        onclick="closeModalOutside(event, 'settingDetailModal')">
+
+        <div class="modal">
+
+            <button class="close-btn"
+                onclick="closeModal('settingDetailModal')">
+                ×
+            </button>
+
+            <div id="settingDetailContent">
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- PDF VIEWER MODAL -->
+
+    <div id="pdfViewerModal"
+        class="modal-overlay"
+        onclick="closeModalOutside(event, 'pdfViewerModal')">
+
+        <div class="modal pdf-viewer-modal">
+
+            <button class="close-btn"
+                onclick="closeModal('pdfViewerModal')">
+                ×
+            </button>
+
+            <div class="pdf-header">
+
+                <div>
+
+                    <h2 id="pdfTitle">
+                        Study Material
+                    </h2>
+
+                    <p id="pdfSubtitle">
+                        Class 10 Biology
+                    </p>
+
+                </div>
+
+                <div class="pdf-actions">
+
+                    <button class="pdf-btn"
+                        onclick="downloadPdf()">
+
+                        ⬇️ Download
+
+                    </button>
+
+                    <button class="pdf-btn"
+                        onclick="openPdfExternally()">
+
+                        🔗 Open Externally
+
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="pdf-viewer">
+
+                <iframe id="pdfFrame"
+                    type="application/pdf"
+                    style="width: 100%; height: 500px; border: none; border-radius: 10px;">
+                </iframe>
+
+            </div>
+
+            <div class="pdf-footer">
+
+                <p>
+                    📌 <strong>Tip:</strong> Download this PDF for offline access and make notes while studying!
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
