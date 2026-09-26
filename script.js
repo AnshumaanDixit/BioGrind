@@ -4,21 +4,21 @@
 
 // Map chapter names to PDF file paths
 const pdfMap = {
-    "Structure of Chromosome.pdf": "Structure of Chromosome.pdf",
-    "Genetics.pdf": "Genetics.pdf",
-    "Absorption by Roots.pdf": "Absorption by Roots.pdf",
-    "Transpiration.pdf": "Transpiration.pdf",
-    "Photosynthesis.pdf": "Photosynthesis.pdf",
-    "Chemical Coordination in.pdf": "Chemical Coordination in.pdf",
-    "The Circulatory System.pdf": "The Circulatory System.pdf",
-    "The Excretory System.pdf": "The Excretory System.pdf",
-    "The Nervous System.pdf": "The Nervous System.pdf",
-    "Sense Organs.pdf": "Sense Organs.pdf",
-    "The Endocrine System.pdf": "The Endocrine System.pdf",
-    "The Reproductive System.pdf": "The Reproductive System.pdf",
-    "Human Evolution.pdf": "Human Evolution.pdf",
-    "Population.pdf": "Population.pdf",
-    "Pollution.pdf": "Pollution.pdf"
+    "Structure of Chromosome.pdf": "pdfs/Structure of Chromosome.pdf",
+    "Genetics.pdf": "pdfs/Genetics.pdf",
+    "Absorption by Roots.pdf": "pdfs/Absorption by Roots.pdf",
+    "Transpiration.pdf": "pdfs/Transpiration.pdf",
+    "Photosynthesis.pdf": "pdfs/Photosynthesis.pdf",
+    "Chemical Coordination in.pdf": "pdfs/Chemical Coordination in.pdf",
+    "The Circulatory System.pdf": "pdfs/The Circulatory System.pdf",
+    "The Excretory System.pdf": "pdfs/The Excretory System.pdf",
+    "The Nervous System.pdf": "pdfs/The Nervous System.pdf",
+    "Sense Organs.pdf": "pdfs/Sense Organs.pdf",
+    "The Endocrine System.pdf": "pdfs/The Endocrine System.pdf",
+    "The Reproductive System.pdf": "pdfs/The Reproductive System.pdf",
+    "Human Evolution.pdf": "pdfs/Human Evolution.pdf",
+    "Population.pdf": "pdfs/Population.pdf",
+    "Pollution.pdf": "pdfs/Pollution.pdf"
 };
 
 // Store current PDF for reference
@@ -42,7 +42,12 @@ function openPdfViewer(pdfFile, chapterName) {
 
     // Set PDF source (replace with your PDF server URL)
     // For now, using a placeholder - you'll need to host PDFs on a server
-    const pdfUrl = `/pdfs/${pdfFile}`;
+    const pdfUrl = pdfMap[pdfFile];
+
+    if (!pdfUrl) {
+        alert(`PDF not configured: ${pdfFile}`);
+        return;
+    }
     // or if using a different server:
     // const pdfUrl = `https://your-domain.com/pdfs/${pdfFile}`;
 
@@ -78,7 +83,13 @@ function downloadPdf() {
     }
 
     // Create download link
-    const pdfUrl = `/pdfs/${currentPdfFile}`;
+    const pdfUrl = pdfMap[currentPdfFile];
+
+    if (!pdfUrl) {
+        alert(`PDF not configured: ${currentPdfFile}`);
+        return;
+    }
+
     const link = document.createElement("a");
     link.href = pdfUrl;
     link.download = currentPdfFile;
@@ -97,7 +108,13 @@ function openPdfExternally() {
         return;
     }
 
-    const pdfUrl = `/pdfs/${currentPdfFile}`;
+    const pdfUrl = pdfMap[currentPdfFile];
+
+    if (!pdfUrl) {
+        alert(`PDF not configured: ${currentPdfFile}`);
+        return;
+    }
+
     window.open(pdfUrl, "_blank");
 
 }
@@ -547,71 +564,6 @@ function openSetting(setting) {
     }
 
 
-    /* MODE */
-
-    else if (setting === "mode") {
-
-        html = `
-
-            <div class="modal-icon">
-                🌙
-            </div>
-
-            <h2>
-                Appearance
-            </h2>
-
-            <p class="modal-subtitle">
-                Choose your preferred appearance.
-            </p>
-
-            <button class="mode-option"
-                onclick="toggleTheme(); closeModal('settingDetailModal')">
-
-                <span>
-                    ☀️
-                </span>
-
-                <div>
-
-                    <strong>
-                        Light
-                    </strong>
-
-                    <small>
-                        Easy on the eyes during the day.
-                    </small>
-
-                </div>
-
-            </button>
-
-            <button class="mode-option"
-                onclick="toggleTheme(); closeModal('settingDetailModal')">
-
-                <span>
-                    🌙
-                </span>
-
-                <div>
-
-                    <strong>
-                        Dark
-                    </strong>
-
-                    <small>
-                        Better for your eyes at night.
-                    </small>
-
-                </div>
-
-            </button>
-
-        `;
-
-    }
-
-
     /* HELP */
 
     else if (setting === "help") {
@@ -680,39 +632,6 @@ function openSetting(setting) {
     ).innerHTML = html;
 
     openModal("settingDetailModal");
-
-}
-
-
-/* =====================================================
-   THEME
-===================================================== */
-
-function toggleTheme() {
-
-    document.body.classList.toggle("dark");
-
-    const isDark =
-        document.body.classList.contains("dark");
-
-    localStorage.setItem(
-        "biogrindTheme",
-        isDark ? "dark" : "light"
-    );
-
-}
-
-
-function loadTheme() {
-
-    const theme =
-        localStorage.getItem("biogrindTheme");
-
-    if (theme === "dark") {
-
-        document.body.classList.add("dark");
-
-    }
 
 }
 
@@ -1474,7 +1393,7 @@ document.addEventListener(
     "DOMContentLoaded",
     () => {
 
-        loadTheme();
+        document.body.classList.add("dark");
 
         initChapterImages();
 

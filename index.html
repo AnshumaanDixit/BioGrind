@@ -10,19 +10,13 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="dark">
 
     <!-- ================= SIDEBAR ================= -->
 
     <aside class="sidebar">
 
-        <div class="logo">
-
-            <div class="logo-icon">
-                🧬
-            </div>
-
-            <div class="logo-text">
+        <div class="logo"><div class="logo-mark" aria-label="BioGrind logo"></div><div class="logo-text">
 
                 <h2>BioGrind</h2>
 
@@ -80,15 +74,7 @@
 
 
         <div class="sidebar-bottom">
-
-            <button class="theme-btn"
-                onclick="toggleTheme()">
-
-                🌙
-                <span>Dark / Light</span>
-
-            </button>
-
+            <!-- Dark mode is permanent -->
         </div>
 
     </aside>
@@ -535,7 +521,7 @@
             <div class="chapter-grid">
 
 
-                <div class="chapter-card" data-image="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=1200&q=80" data-pdf="Structure of Chromosome.pdf">
+                <div class="chapter-card" data-pdf="Structure of Chromosome.pdf" data-image="images/01-chromosomes.jpg">
 
                     <span class="chapter-number">
                         01
@@ -556,7 +542,7 @@
                 </div>
 
 
-                <div class="chapter-card" data-image="https://images.unsplash.com/photo-1530026405186-ed1f139313f8?auto=format&fit=crop&w=1200&q=80" data-pdf="Genetics.pdf">
+                <div class="chapter-card" data-image="images/02-genetics.jpg" data-pdf="Genetics.pdf">
 
                     <span class="chapter-number">
                         02
@@ -577,7 +563,7 @@
                 </div>
 
 
-                <div class="chapter-card" data-image="https://images.unsplash.com/photo-1497250681960-ef046c08a56e?auto=format&fit=crop&w=1200&q=80" data-pdf="Absorption by Roots.pdf">
+                <div class="chapter-card" data-image="images/03-roots.jpg" data-pdf="Absorption by Roots.pdf">
 
                     <span class="chapter-number">
                         03
@@ -598,7 +584,7 @@
                 </div>
 
 
-                <div class="chapter-card" data-image="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1200&q=80" data-pdf="Transpiration.pdf">
+                <div class="chapter-card" data-image="images/04-transpiration.jpg" data-pdf="Transpiration.pdf">
 
                     <span class="chapter-number">
                         04
@@ -619,7 +605,7 @@
                 </div>
 
 
-                <div class="chapter-card" data-image="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=1200&q=80" data-pdf="Photosynthesis.pdf">
+                <div class="chapter-card" data-image="images/05-photosynthesis.jpg" data-pdf="Photosynthesis.pdf">
 
                     <span class="chapter-number">
                         05
@@ -640,7 +626,7 @@
                 </div>
 
 
-                <div class="chapter-card" data-image="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?auto=format&fit=crop&w=1200&q=80" data-pdf="Chemical Coordination in.pdf">
+                <div class="chapter-card" data-image="images/06-chemical-coordination.jpg" data-pdf="Chemical Coordination in.pdf">
 
                     <span class="chapter-number">
                         06
@@ -661,7 +647,7 @@
                 </div>
 
 
-                <div class="chapter-card" data-image="https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=1200&q=80" data-pdf="The Circulatory System.pdf">
+                <div class="chapter-card" data-image="images/07-circulation.jpg" data-pdf="The Circulatory System.pdf">
 
                     <span class="chapter-number">
                         07
@@ -682,7 +668,7 @@
                 </div>
 
 
-                <div class="chapter-card" data-image="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=1200&q=80" data-pdf="The Excretory System.pdf">
+                <div class="chapter-card" data-image="images/08-excretory.jpg" data-pdf="The Excretory System.pdf">
 
                     <span class="chapter-number">
                         08
@@ -703,7 +689,7 @@
                 </div>
 
 
-                <div class="chapter-card" data-image="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=1200&q=80" data-pdf="The Nervous System.pdf">
+                <div class="chapter-card" data-image="images/09-nervous.jpg" data-pdf="The Nervous System.pdf">
 
                     <span class="chapter-number">
                         09
@@ -724,7 +710,7 @@
                 </div>
 
 
-                <div class="chapter-card" data-image="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=1200&q=80" data-pdf="Sense Organs.pdf">
+                <div class="chapter-card" data-image="images/10-senses.jpg" data-pdf="Sense Organs.pdf">
 
                     <span class="chapter-number">
                         10
@@ -745,7 +731,7 @@
                 </div>
 
 
-                <div class="chapter-card" data-image="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=80" data-pdf="The Endocrine System.pdf">
+                <div class="chapter-card" data-image="images/11-endocrine.jpg" data-pdf="The Endocrine System.pdf">
 
                     <span class="chapter-number">
                         11
@@ -766,7 +752,7 @@
                 </div>
 
 
-                <div class="chapter-card" data-image="https://images.unsplash.com/photo-1578496479531-32e07e75e0b6?auto=format&fit=crop&w=1200&q=80" data-pdf="The Reproductive System.pdf">
+                <div class="chapter-card" data-image="images/12-reproductive.jpg" data-pdf="The Reproductive System.pdf">
 
                     <span class="chapter-number">
                         12
@@ -787,7 +773,7 @@
                 </div>
 
 
-                <div class="chapter-card" data-image="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=1200&q=80" data-pdf="Human Evolution.pdf">
+                <div class="chapter-card" data-image="images/13-evolution.jpg" data-pdf="Human Evolution.pdf">
 
                     <span class="chapter-number">
                         13
@@ -808,7 +794,7 @@
                 </div>
 
 
-                <div class="chapter-card" data-image="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1200&q=80" data-pdf="Population.pdf">
+                <div class="chapter-card" data-image="images/14-population.jpg" data-pdf="Population.pdf">
 
                     <span class="chapter-number">
                         14
@@ -829,7 +815,7 @@
                 </div>
 
 
-                <div class="chapter-card" data-image="https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=1200&q=80" data-pdf="Pollution.pdf">
+                <div class="chapter-card" data-image="images/15-pollution.jpg" data-pdf="Pollution.pdf">
 
                     <span class="chapter-number">
                         15
@@ -1434,31 +1420,6 @@
 
                         <small>
                             Manage reminders and alerts
-                        </small>
-
-                    </span>
-
-                    <span>
-                        →
-                    </span>
-
-                </button>
-
-
-                <button onclick="openSetting('mode')">
-
-                    <span class="setting-icon">
-                        🌙
-                    </span>
-
-                    <span class="setting-text">
-
-                        <strong>
-                            Mode
-                        </strong>
-
-                        <small>
-                            Light or dark appearance
                         </small>
 
                     </span>

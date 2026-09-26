@@ -2849,3 +2849,89 @@ body:not(.dark) .chapter-card::after {
         font-size: 18px;
     }
 }
+
+
+/* ===== BIOGRIND BRAND MARK ===== */
+.logo-mark{width:42px;height:42px;flex:0 0 42px;position:relative;display:grid;place-items:center;border-radius:13px;background:linear-gradient(145deg,#22c55e,#0f9f55);box-shadow:0 8px 20px rgba(34,197,94,.22);color:#06130d;font-size:22px;font-weight:900}
+.logo-mark::before{content:"B";font-family:Georgia,serif;font-style:italic}.logo-mark::after{content:"";position:absolute;width:17px;height:7px;border:2px solid #06130d;border-top:0;border-radius:0 0 12px 12px;bottom:7px;opacity:.75}.logo{gap:12px}
+
+/* ===== DASHBOARD BACKGROUND ===== */
+#dashboard{position:relative;isolation:isolate;overflow:hidden;border-radius:28px;padding:30px;background:linear-gradient(135deg,rgba(7,23,16,.96),rgba(12,39,26,.91)),radial-gradient(circle at 88% 8%,rgba(34,197,94,.20),transparent 34%),radial-gradient(circle at 12% 88%,rgba(16,185,129,.14),transparent 32%)}
+#dashboard::before{content:"";position:absolute;inset:0;z-index:-1;opacity:.22;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:34px 34px;mask-image:linear-gradient(to bottom,black,transparent 88%)}
+#dashboard::after{content:"BIOLOGY • LEARN • PRACTICE • GROW";position:absolute;right:-20px;top:18px;z-index:-1;color:rgba(74,222,128,.08);font-size:clamp(36px,5vw,74px);font-weight:900;letter-spacing:5px;white-space:nowrap;transform:rotate(-8deg);pointer-events:none}
+
+/* ===== REQUESTED CHAPTER IMAGE TUNING ===== */
+.chapter-card[data-pdf="Genetics.pdf"]::before,.chapter-card[data-pdf="The Circulatory System.pdf"]::before,.chapter-card[data-pdf="The Excretory System.pdf"]::before,.chapter-card[data-pdf="The Reproductive System.pdf"]::before,.chapter-card[data-pdf="Sense Organs.pdf"]::before,.chapter-card[data-pdf="The Endocrine System.pdf"]::before{opacity:.42}
+
+/* =========================================================
+   BIOGRIND — UNIQUE TOPIC IMAGES FOR EVERY CHAPTER
+   Local SVG artwork keeps the visual style consistent and works offline.
+   ========================================================= */
+.chapter-card[data-pdf="Structure of Chromosome.pdf"] { --chapter-image: url("images/01-chromosomes.jpg"); }
+.chapter-card[data-pdf="Genetics.pdf"] { --chapter-image: url("images/02-genetics.jpg"); }
+.chapter-card[data-pdf="Absorption by Roots.pdf"] { --chapter-image: url("images/03-roots.jpg"); }
+.chapter-card[data-pdf="Transpiration.pdf"] { --chapter-image: url("images/04-transpiration.jpg"); }
+.chapter-card[data-pdf="Photosynthesis.pdf"] { --chapter-image: url("images/05-photosynthesis.jpg"); }
+.chapter-card[data-pdf="Chemical Coordination in.pdf"] { --chapter-image: url("images/06-chemical-coordination.jpg"); }
+.chapter-card[data-pdf="The Circulatory System.pdf"] { --chapter-image: url("images/07-circulation.jpg"); }
+.chapter-card[data-pdf="The Excretory System.pdf"] { --chapter-image: url("images/08-excretory.jpg"); }
+.chapter-card[data-pdf="The Nervous System.pdf"] { --chapter-image: url("images/09-nervous.jpg"); }
+.chapter-card[data-pdf="Sense Organs.pdf"] { --chapter-image: url("images/10-senses.jpg"); }
+.chapter-card[data-pdf="The Endocrine System.pdf"] { --chapter-image: url("images/11-endocrine.jpg"); }
+.chapter-card[data-pdf="The Reproductive System.pdf"] { --chapter-image: url("images/12-reproductive.jpg"); }
+.chapter-card[data-pdf="Human Evolution.pdf"] { --chapter-image: url("images/13-evolution.jpg"); }
+.chapter-card[data-pdf="Population.pdf"] { --chapter-image: url("images/14-population.jpg"); }
+.chapter-card[data-pdf="Pollution.pdf"] { --chapter-image: url("images/15-pollution.jpg"); }
+
+/* BIOGRIND CHAPTER ART FIX — keep every topic image visibly layered inside the card */
+.chapter-card {
+    isolation: isolate;
+    background: #122019;
+}
+.chapter-card::before {
+    z-index: 0 !important;
+    opacity: 0.30 !important;
+    filter: saturate(0.72) brightness(0.92);
+    transform: scale(1.01);
+}
+.chapter-card::after {
+    z-index: 1 !important;
+    background: linear-gradient(135deg, rgba(7,19,14,.90) 0%, rgba(10,28,20,.76) 55%, rgba(6,18,13,.86) 100%) !important;
+}
+.chapter-card > * {
+    position: relative;
+    z-index: 2;
+}
+.chapter-card:hover::before {
+    opacity: 0.36 !important;
+    filter: saturate(0.78) brightness(0.94);
+    transform: scale(1.05);
+}
+
+/* Final matte image treatment: each chapter uses its own local image. */
+.chapter-card::before {
+    opacity: 0.50 !important;
+    filter: saturate(0.88) brightness(0.92) contrast(0.92);
+}
+.chapter-card:hover::before {
+    opacity: 0.56 !important;
+}
+
+/* =========================================================
+   BIOGRIND — DARK MODE ONLY
+   ========================================================= */
+html, body {
+    background: #101613;
+    color: #f3f4f6;
+}
+
+body:not(.dark) {
+    --bg: #101613;
+    --card: #18211d;
+    --text: #f3f4f6;
+    --muted: #a7b0aa;
+    --border: #29352f;
+    --sidebar: #151d19;
+    background: #101613;
+    color: #f3f4f6;
+}
